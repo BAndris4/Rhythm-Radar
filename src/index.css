@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwinond components;
+@tailwind utilities;
+@font-face {
+    font-family: "GothamBold";
+    src: url(./Gotham-Font/Gotham-Bold.ttf);
+}
+@font-face {
+    font-family: "GothamBook";
+    src: url(./Gotham-Font/Gotham-Book.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+.login-body{
+    font-family: GothamBold;
+}
+
+.navbar-container{
+    font-family: GothamBook;
+}
+
+
+
+.cover{
+    object-fit: cover;
+}
+
+.closed-navbar-panel {
+    opacity: 0;
+    left: -500px
+}
+
+.closed-navbar-panel.open {
+    opacity: 1;
+    left: 20px;
+}
