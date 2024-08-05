@@ -85,7 +85,7 @@ function Profile(){
                     <div className="flex flex-col md:flex-row mx-[5%] xl:absolute gap-5 xl:translate-x-[-6000px] my-0">
                         
                         {/*XL-nél kisebb bal data card*/}
-                        <div className="profile-left-data-card text-center flex flex-col justify-around justify-center bg-[#96E072] hover:bg-[#3DA35D] xl:w-1/5 w-full md:w-1/2 p-10 shadow-2xl shadow-[#96E072] hover:shadow-[#3DA35D] rounded-2xl hover:scale-105 transition-all duration-300">
+                        <div className="profile-left-data-card text-center flex flex-col justify-around bg-[#96E072] hover:bg-[#3DA35D] xl:w-1/5 w-full md:w-1/2 p-10 shadow-2xl shadow-[#96E072] hover:shadow-[#3DA35D] rounded-2xl hover:scale-105 transition-all duration-300">
                             <h2 className="text-xl font-semibold text-[#134611] hover:text-[#E8FCCF] transition-all cursor-pointer duration-200">Email: {email} </h2>
                             <h2 className="text-xl font-semibold text-[#134611] hover:text-[#E8FCCF] transition-all cursor-pointer duration-200">Country: {Countries[country]}</h2>
                             <h2 className="text-xl font-semibold text-[#134611] hover:text-[#E8FCCF] transition-all cursor-pointer duration-200">Followers: {followers}</h2>
@@ -97,7 +97,7 @@ function Profile(){
                             {publicPlaylists <= 3 ? (
                                 publicPlaylistImages.map((image, index) => (
                                     <a href={publicPlaylistUrls[index]} className={`w-1/${publicPlaylists+1}`}> 
-                                        <img src={image} key={index} className="aspect-square cover rounded-2xl shadow-md shadow-[#134611] hover:scale-110 duration-200" /> 
+                                        <img src={image} key={index} className="w-full aspect-square cover rounded-2xl shadow-md shadow-[#134611] hover:scale-110 duration-200" /> 
                                     </a>
                                 )))
                             :
@@ -164,7 +164,7 @@ function Profile(){
                         {publicPlaylists <= 3 ? (
                             publicPlaylistImages.map((image, index) => (
                                 <a href={publicPlaylistUrls[index]} className={`w-1/${publicPlaylists+1}`}> 
-                                    <img src={image} key={index} className="aspect-square cover rounded-2xl shadow-md shadow-[#134611] hover:scale-110 duration-200" /> 
+                                    <img src={image} key={index} className="aspect-square w-full cover rounded-2xl shadow-md shadow-[#134611] hover:scale-110 duration-200" /> 
                                 </a>
                             )))
                         :
