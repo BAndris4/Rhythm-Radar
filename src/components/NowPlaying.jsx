@@ -113,7 +113,7 @@ function NowPlaying(props){
             <div className="now-playing-panel absolute mt-[12px] flex justify-center items-center gap-3 py-1 px-5 left-1/2 w-64 bg-[#3DA35D] rounded-2xl opacity-0 transition-all duration-500 delay-300 group-hover:opacity-100 group-hover:scale-105 transform -translate-x-1/2">
                 <img src="/src/assets/next-button.svg" className="w-5 h-5 rotate-180 " alt="" onClick={previousTrack} />
                 <div className="panel-player bg-[#96E072] rounded-xl w-[90%] h-2" onClick={stopTrack}>
-                    <div className="panel-circle bg-[#E8FCCF] h-2 rounded-xl" style={{ width: `${progress}%` }}></div>
+                    <div className="panel-circle bg-[#E8FCCF] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
                 </div>    
                 <img src="/src/assets/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
             </div>
@@ -137,7 +137,7 @@ function NowPlaying(props){
                 <div className="now-playing-panel mt-[12px] flex justify-center items-center gap-3 py-1 px-5 w-64 bg-[#3DA35D] rounded-2xl transition-all duration-500 delay-300">
                     <img src="/src/assets/next-button.svg" className="w-5 h-5 rotate-180 " alt="" onClick={previousTrack} />
                     <div className="panel-player bg-[#96E072] rounded-xl w-[90%] h-2 relative" onClick={stopTrack}>
-                        <div className="panel-circle bg-[#E8FCCF] h-2 rounded-xl" style={{ width: `${progress}%` }}></div>
+                        <div className="panel-circle bg-[#E8FCCF] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
                     </div>    
                     <img src="/src/assets/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
                 </div>

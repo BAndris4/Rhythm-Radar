@@ -13,11 +13,11 @@
 ::-webkit-scrollbar {
     width: 0px;
 }
-.login-body{
+.login-body, .table-header, .table-body-row:hover{
     font-family: GothamBold;
 }
 
-.navbar-container{
+.navbar-container, .table-body{
     font-family: GothamBook;
 }
 
