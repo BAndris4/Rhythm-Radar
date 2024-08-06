@@ -13,11 +13,11 @@
 ::-webkit-scrollbar {
     width: 0px;
 }
-.login-body, .table-header, .table-body-row:hover{
+.login-body, .table-header, .table-body-row:hover, .time-range-item:hover, .track-header, .track-item:hover, .track-number, .artist-card:hover{
     font-family: GothamBold;
 }
 
-.navbar-container, .table-body{
+.navbar-container, .table-body, .time-range-container, .track-body, .artist-card{
     font-family: GothamBook;
 }
 

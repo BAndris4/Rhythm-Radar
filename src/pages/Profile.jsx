@@ -67,7 +67,7 @@ function Profile(){
                 <div className="flex-1 profile-container flex xl:flex-row flex-col justify-center xl:gap-12 gap-6">
                     
                     {/*XL-nél kisebb welcome card*/}
-                    <div className="profile-welcome-card flex items-center xl:translate-x-[-6000px] xl:absolute justify-center flex-col gap-3 mt-7 bg-[#96E072] hover:bg-[#3DA35D] xl:w-2/5 w-[90%] translate-x-[5%] py-10 shadow-2xl shadow-[#96E072] hover:shadow-[#3DA35D] rounded-2xl hover:scale-105 transition-transform duration-300">
+                    <div className="profile-welcome-card flex z-0 items-center xl:translate-x-[-6000px] xl:absolute justify-center flex-col gap-3 mt-7 bg-[#96E072] hover:bg-[#3DA35D] xl:w-2/5 w-[90%] translate-x-[5%] py-10 shadow-2xl shadow-[#96E072] hover:shadow-[#3DA35D] rounded-2xl hover:scale-105 transition-transform duration-300">
                         <a href={link}><img className="profile-pic h-56 w-56 rounded-full cover shadow-md shadow-[#134611] hover:scale-110 duration-200" src={imgURL}></img></a>
                         <h2 className="text-3xl font-semibold text-[#134611] hover:text-[#E8FCCF] transition-all cursor-pointer duration-200">Welcome {username}!</h2>
                     </div>

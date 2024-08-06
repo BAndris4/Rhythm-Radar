@@ -49,8 +49,18 @@ function RecentlyPlayed() {
         });
     }, [token]);
 
-    const formatDate = (dateString) => {
+    const formatDateLong = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+    };
+
+    const formatDateMid = (dateString) => {
+        const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+    };
+
+    const formatDateShort = (dateString) => {
+        const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' };
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
 
@@ -69,11 +79,11 @@ function RecentlyPlayed() {
     };
 
     return (
-        <div className="recently-played-container bg-[#E8FCCF]">
+        <div className="recently-played-container bg-[#E8FCCF] min-h-dvh">
             <Navbar />
             <div className="flex justify-center">
-                <div className="recently-played-table my-10 w-4/5 shadow-2xl shadow-[#134611] text-[#134611]">
-                    <div className="table-header rounded-xl scale-[1.01] bg-[#3DA35D] h-10 flex justify-around shadow-md shadow-[#134611]">
+                <div className="recently-played-table my-10 text-md w-[90%] sm:w-4/5 shadow-2xl shadow-[#134611] text-[#134611]">
+                    <div className="table-header rounded-xl scale-[1.01] bg-[#3DA35D] h-10 flex justify-around shadow-md shadow-[#134611] text-center">
                         <div className="w-[5%] flex justify-center items-center min-w-14 ">Album</div>
                         <div className="w-[40%] flex items-center px-2">Track</div>
                         <div className="w-[40%] flex items-center px-2">Artist</div>
@@ -85,13 +95,14 @@ function RecentlyPlayed() {
                             onMouseLeave={() => setHoveredIndex(-1)} >
                                 <div className="w-[5%] flex items-center justify-center min-w-14 py-1">
                                     <img src={albumImages[index]} className={`w-12 rounded-xl shadow-sm shadow-[#134611] ${currentTrackIndex === index ? "blur-[1px]" : ""} duration-200`} alt=""/>
-                                    <img src="../src/assets/play-button.svg" alt="" className={`absolute ${hoveredIndex === index && currentTrackIndex !== index ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`} 
- />
+                                    <img src="../src/assets/play-button.svg" alt="" className={`absolute ${hoveredIndex === index && currentTrackIndex !== index ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
                                     <img src="../src/assets/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === index ? "opacity-100" : ""} w-5 absolute duration-200`} />
                                 </div>
                                 <div className="w-[40%] flex items-center px-2">{track}</div>
                                 <div className="w-[40%] flex items-center px-2">{recentArtists[index]}</div>
-                                <div className="w-[25%] flex items-center px-2">{formatDate(playedAt[index])}</div>
+                                <div className="w-[25%] flex items-center px-2 lg:opacity-100 lg:relative opacity-0 absolute">{formatDateLong(playedAt[index])}</div>
+                                <div className="w-[25%] flex items-center px-2 lg:opacity-0 lg:absolute sm:opacity-100 sm:relative opacity-0 absolute">{formatDateMid(playedAt[index])}</div>
+                                <div className="w-[25%] flex items-center px-2 sm:opacity-0 sm:absolute opacity-100 relative">{formatDateShort(playedAt[index])}</div>
                             </div>
                         ))}
                     </div>
