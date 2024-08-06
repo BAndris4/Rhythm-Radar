@@ -13,4 +13,7 @@ export default defineConfig({
       ],
     },
   },
+  build: {
+    outDir: 'build', // Ensure the build directory matches the deploy script
+  },
 });
