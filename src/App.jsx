@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {HashRouter, Routes, Route} from 'react-router-dom'
 import Login from "./pages/Login.jsx"
 import Profile from "./pages/Profile.jsx"
 import Tracks from './pages/Tracks.jsx'
@@ -10,7 +10,7 @@ function App() {
   
   return (
     <div>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route index element={<Login></Login>}></Route>
             <Route path='/login' element={<Login></Login>}></Route>
@@ -19,8 +19,7 @@ function App() {
             <Route path='/artists' element={<Artists></Artists>}></Route>
             <Route path='/recently-played' element={<RecentlyPlayed></RecentlyPlayed>}></Route>
           </Routes>
-        
-        </BrowserRouter>
+        </HashRouter>
     </div>
   )
 }
