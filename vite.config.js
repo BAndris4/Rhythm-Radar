@@ -4,6 +4,7 @@ import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 
 export default defineConfig({
+  base: "/Rhythm-Radar/",
   plugins: [react()],
   css: {
     postcss: {
@@ -12,8 +13,5 @@ export default defineConfig({
         autoprefixer,
       ],
     },
-  },
-  build: {
-    outDir: 'build', // Ensure the build directory matches the deploy script
   },
 });
