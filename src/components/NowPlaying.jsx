@@ -47,7 +47,6 @@ function NowPlaying(props){
                 headers: { 'Authorization': 'Bearer ' + token }
             })
             .then(response => {
-                //console.log(response.data);
                 if (response.data) {
                     setCurrentArtists(response.data.item.artists.map(artist => artist.name));
                     setCurrentTrack(response.data.item.name);
@@ -72,13 +71,11 @@ function NowPlaying(props){
                     headers: { 'Authorization': 'Bearer ' + token }
                 })
                 .then(response => {
-                    console.log(response.data);
                     if (response.data) {
                         setCurrentArtists(response.data.item.artists.map(artist => artist.name));
                         setCurrentTrack(response.data.item.name);
                         setProgress(Math.round(response.data.progress_ms / response.data.item.duration_ms * 100));
                         setAlbumImage(response.data.item.album.images[0].url);
-                        console.log(albumImage);
                     } else {
                         setCurrentArtists(["No Artist"]);
                         setCurrentTrack("No Track");
@@ -98,7 +95,7 @@ function NowPlaying(props){
 
     if (placement == 0){
         return(
-            <div className="relative group md:top-0 top-[-200px] md:relative">
+            <div className="absolute group md:top-0 top-[-200px] md:relative">
             <div className="navbar-now-playing flex items-center py-2 px-3 gap-3 cursor-pointer shadow-md font-semibold min-w-64 rounded-2xl transition-all bg-[#3DA35D] text-[#134611] group-hover:text-[#E8FCCF] group-hover:scale-105">
                 <div className="now-playing-image transition-all">
                     <img src={albumImage} alt="" className=" w-12 rounded-md"/>

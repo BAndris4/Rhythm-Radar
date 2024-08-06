@@ -59,7 +59,7 @@ function Navbar() {
                 </div>
             </div>
             
-            <div className="navbar-tabs flex 2xl:w-3/5 lg:w-2/5 justify-start lg:gap-7 xl:gap-12 lg:ml-10 font-semibold absolute lg:relative top-[-100px] lg:top-0">
+            <div className="navbar-tabs flex 2xl:w-3/5 lg:w-2/5 justify-start lg:gap-7 xl:gap-12 lg:ml-10 font-semibold absolute lg:relative translate-y-[-200px] lg:translate-y-0">
                 <div className="navbar-tracks lg:px-5 lg:py-2 rounded-md transition-all text-[#134611] hover:bg-[#3DA35D] hover:shadow-md hover:shadow-[#3DA35D] hover:scale-105 cursor-pointer hover:text-[#E8FCCF] duration-300" onClick={() => {navigate("/tracks")}}>
                     Tracks
                 </div>

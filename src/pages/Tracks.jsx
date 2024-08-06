@@ -42,9 +42,7 @@ function Artists() {
                 setTracks(tracks_array);
                 setArtists(artists_array);
                 setAlbumImages(albumImages_array);
-                setPreviews(previews_array);
-                console.log(response.data.items);
-                
+                setPreviews(previews_array);            
             });
         }
     }, [timeRange, token]);
@@ -84,11 +82,11 @@ function Artists() {
                     </div>
                 </div>
             
-                <div className="tracks-body text-sm flex flex-col w-4/5 items-center my-10 shadow-2xl shadow-[#134611]">
+                <div className="tracks-body text-sm flex flex-col sm:w-4/5 w-[90%] items-center my-10 shadow-2xl shadow-[#134611]">
                     
                     <div className="track-header w-full rounded-xl scale-[1.01] bg-[#3DA35D] h-10 flex justify-around shadow-md shadow-[#134611] px-2">
-                        <div className="track-number w-[3%] translate-x-2 min-w-4 flex items-center justify-center">No.</div>
-                        <div className="track-album-image w-[5%] translate-x-2 sm:min-w-16 min-w-11 flex items-center justify-center">Album</div>
+                        <div className="track-number w-[3%] translate-x-2 min-w-4 flex items-center justify-center sm:opacity-100 opacity-0">No.</div>
+                        <div className="track-album-image w-[5%] translate-x-2 sm:min-w-16 min-w-11 flex items-center justify-center sm:opacity-100 opacity-0">Album</div>
                         <div className="track-name w-[50%] translate-x-2 flex items-center">Track</div>
                         <div className="track-artists w-[42%] translate-x-1 flex items-center">Artists</div>
                     </div>
