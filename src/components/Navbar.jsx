@@ -44,7 +44,7 @@ function Navbar() {
         <div className="navbar-container h-[76px] flex lg:justify-between items-center bg-[#96E072]">
             
             <div className="closed-navbar z-10 w-1/5 ml-5 lg:w-0">
-                <img src="/src/assets/more.svg" alt="" className={`left-0 lg:left-[-100px] lg:absolute relative w-8 ml-5 hover:scale-110 transition-all ${isOpen ? 'open' : 'closed'} cursor-pointer duration-200`} onClick={handleToggle} />
+                <img src="/more.svg" alt="" className={`left-0 lg:left-[-100px] lg:absolute relative w-8 ml-5 hover:scale-110 transition-all ${isOpen ? 'open' : 'closed'} cursor-pointer duration-200`} onClick={handleToggle} />
                 <div className={`closed-navbar-panel shadow-md shadow-[#134611] transition-all duration-300 absolute mt-[50px] md:h-[120px] w-64 bg-[#96E072] rounded-2xl ${isOpen ? 'open' : 'closed'} `} >
                     <div className="navbar-tracks font-semibold px-5 py-2 rounded-t-2xl rounded-b-md transition-all text-[#134611] hover:bg-[#3DA35D] hover:shadow-md hover:shadow-[#3DA35D] hover:scale-[1.01] cursor-pointer hover:text-[#E8FCCF] duration-300" onClick={() => {navigate("/tracks"); setIsOpen(false);}}>
                         Tracks

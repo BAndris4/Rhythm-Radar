@@ -95,8 +95,8 @@ function RecentlyPlayed() {
                             onMouseLeave={() => setHoveredIndex(-1)} >
                                 <div className="w-[5%] flex items-center justify-center min-w-14 py-1">
                                     <img src={albumImages[index]} className={`w-12 rounded-xl shadow-sm shadow-[#134611] ${currentTrackIndex === index ? "blur-[1px]" : ""} duration-200`} alt=""/>
-                                    <img src="../src/assets/play-button.svg" alt="" className={`absolute ${hoveredIndex === index && currentTrackIndex !== index ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
-                                    <img src="../src/assets/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === index ? "opacity-100" : ""} w-5 absolute duration-200`} />
+                                    <img src="/play-button.svg" alt="" className={`absolute ${hoveredIndex === index && currentTrackIndex !== index ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
+                                    <img src="/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === index ? "opacity-100" : ""} w-5 absolute duration-200`} />
                                 </div>
                                 <div className="w-[40%] flex items-center px-2">{track}</div>
                                 <div className="w-[40%] flex items-center px-2">{recentArtists[index]}</div>
