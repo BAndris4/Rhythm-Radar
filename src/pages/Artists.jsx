@@ -44,25 +44,25 @@ function Artists() {
     }, [fetchArtists]);
 
     return (
-        <div className="artist-page bg-[#E8FCCF] min-h-dvh">
+        <div className="artist-page bg-[var(--color1)] min-h-dvh text-[var(--color5)]">
             <Navbar />
             <div className="artist-container flex flex-col items-center">
-                <div className="time-range-container flex justify-around mt-10 xl:w-1/3 w-1/2 min-w-[300px] mx-5 bg-[#96E072] py-2 px-3 rounded-2xl shadow-md gap-3">
-                    <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[#3DA35D] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("short_term")}>
+                <div className="time-range-container flex justify-around mt-10 xl:w-1/3 w-1/2 min-w-[300px] mx-5 bg-[var(--color2)] py-2 px-3 rounded-2xl shadow-md gap-3">
+                    <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[var(--color3)] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("short_term")}>
                         last 4 weeks
                     </div>
-                    <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[#3DA35D] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("medium_term")}>
+                    <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[var(--color3)] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("medium_term")}>
                         last 6 months
                     </div>
-                    <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[#3DA35D] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("long_term")}>
+                    <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[var(--color3)] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("long_term")}>
                         last 12 months
                     </div>
                 </div>
-                <div className="artists-list grid grid-cols-2 md:grid-cols-3 bg-[#96E072] lg:p-10 p-2 rounded-2xl my-5 lg:gap-x-[5%] gap-x-[2%] lg:gap-y-12 md:gap-y-6 sm:gap-y-2 shadow-xl shadow-[#3DA35D] md:w-2/3 w-[85%]">
+                <div className="artists-list grid grid-cols-2 md:grid-cols-3 bg-[var(--color2)] lg:p-10 p-2 rounded-2xl my-5 lg:gap-x-[5%] gap-x-[2%] lg:gap-y-12 md:gap-y-6 sm:gap-y-2 shadow-xl shadow-[var(--color2)] md:w-2/3 w-[85%]">
                     {artists.map((artist, index) => (
                         <a key={index} href={artistUrls[index]} >
-                            <div className="artist-card flex flex-col gap-4 justify-center items-center hover:bg-[#3DA35D] hover:shadow-2xl hover:shadow-[#134611] p-5 rounded-2xl duration-200 hover:scale-105">
-                                <img src={artistImages[index]} className="artist-card-image shadow-lg shadow-[#134611] w-56 rounded-2xl cover aspect-square" alt="" />
+                            <div className="artist-card flex flex-col gap-4 justify-center items-center hover:bg-[var(--color3)] hover:shadow-2xl hover:shadow-[var(--color3)] p-5 rounded-2xl duration-200 hover:scale-105">
+                                <img src={artistImages[index]} className="artist-card-image shadow-lg shadow-[var(--color2)] w-56 rounded-2xl cover aspect-square" alt="" />
                                 <div className="artist-card-title text-center">{index+1}. {artist}</div>
                             </div>
                         </a>

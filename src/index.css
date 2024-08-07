@@ -13,6 +13,14 @@
 ::-webkit-scrollbar {
     width: 0px;
 }
+
+:root{
+    --color1: #3E3939;
+    --color2: #2C2727;
+    --color3: #FF7517;
+    --color4: #3E3939;
+    --color5: #F6F4F4;
+}
 .login-body, .table-header, .table-body-row:hover, .time-range-item:hover, .track-header, .track-item:hover, .track-number, .artist-card:hover{
     font-family: GothamBold;
 }

@@ -79,22 +79,22 @@ function RecentlyPlayed() {
     };
 
     return (
-        <div className="recently-played-container bg-[#E8FCCF] min-h-dvh">
+        <div className="recently-played-container bg-[var(--color1)] min-h-dvh">
             <Navbar />
             <div className="flex justify-center">
-                <div className="recently-played-table my-10 text-md w-[90%] sm:w-4/5 shadow-2xl shadow-[#134611] text-[#134611]">
-                    <div className="table-header rounded-xl scale-[1.01] bg-[#3DA35D] h-10 flex justify-around shadow-md shadow-[#134611] text-center">
+                <div className="recently-played-table my-10 text-md w-[90%] sm:w-4/5 shadow-2xl shadow-[var(--color2)] text-[var(--color5)]">
+                    <div className="table-header rounded-xl scale-[1.01] bg-[var(--color3)] h-10 flex justify-around shadow-md shadow-[var(--color3)] text-center">
                         <div className="w-[5%] flex justify-center items-center min-w-14 ">Album</div>
                         <div className="w-[40%] flex items-center px-2">Track</div>
                         <div className="w-[40%] flex items-center px-2">Artist</div>
                         <div className="w-[25%] flex items-center px-2">Played At</div>
                     </div>
-                    <div className="table-body pt-2 bg-[#96E072]">
+                    <div className="table-body pt-2 bg-[var(--color2)]">
                         {recentTracks.map((track, index) => (
-                            <div className="table-body-row cursor-pointer flex bg-[#96E072] rounded-xl duration-200 hover:shadow-xl hover:scale-105 hover:bg-[#3DA35D]" onClick={() => playPreview(previews[index], index)} onMouseEnter={() => setHoveredIndex(index)} 
+                            <div className="table-body-row cursor-pointer flex bg-[var(--color2)] rounded-xl duration-200 hover:shadow-xl hover:scale-105 hover:bg-[var(--color3)]" onClick={() => playPreview(previews[index], index)} onMouseEnter={() => setHoveredIndex(index)} 
                             onMouseLeave={() => setHoveredIndex(-1)} >
                                 <div className="w-[5%] flex items-center justify-center min-w-14 py-1">
-                                    <img src={albumImages[index]} className={`w-12 rounded-xl shadow-sm shadow-[#134611] ${currentTrackIndex === index ? "blur-[1px]" : ""} duration-200`} alt=""/>
+                                    <img src={albumImages[index]} className={`w-12 rounded-xl shadow-sm shadow-[var(--color2)] ${currentTrackIndex === index ? "blur-[1px]" : ""} duration-200`} alt=""/>
                                     <img src="/play-button.svg" alt="" className={`absolute ${hoveredIndex === index && currentTrackIndex !== index ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
                                     <img src="/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === index ? "opacity-100" : ""} w-5 absolute duration-200`} />
                                 </div>

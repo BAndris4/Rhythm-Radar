@@ -96,7 +96,7 @@ function NowPlaying(props){
     if (placement == 0){
         return(
             <div className="absolute group md:top-0 top-[-200px] md:relative">
-            <div className="navbar-now-playing flex items-center py-2 px-3 gap-3 cursor-pointer shadow-md font-semibold min-w-64 rounded-2xl transition-all bg-[#3DA35D] text-[#134611] group-hover:text-[#E8FCCF] group-hover:scale-105">
+            <div className="navbar-now-playing flex items-center py-2 px-3 gap-3 cursor-pointer shadow-md font-semibold min-w-64 rounded-2xl transition-all bg-[var(--color3)] text-[var(--color5)] group-hover:text-[var(--color1)] group-hover:scale-105">
                 <div className="now-playing-image transition-all">
                     <img src={albumImage} alt="" className=" w-12 rounded-md"/>
                 </div>
@@ -107,10 +107,10 @@ function NowPlaying(props){
                 </div>
             </div>
 
-            <div className="now-playing-panel z-10 absolute mt-[12px] flex justify-center items-center gap-3 py-1 px-5 left-1/2 w-64 bg-[#3DA35D] rounded-2xl opacity-0 transition-all duration-500 delay-300 group-hover:opacity-100 group-hover:scale-105 transform -translate-x-1/2">
+            <div className="now-playing-panel z-10 absolute mt-[12px] flex justify-center items-center gap-3 py-1 px-5 left-1/2 w-64 bg-[var(--color2)] rounded-2xl opacity-0 transition-all duration-500 delay-300 group-hover:opacity-100 group-hover:scale-105 transform -translate-x-1/2">
                 <img src="/next-button.svg" className="w-5 h-5 rotate-180 " alt="" onClick={previousTrack} />
-                <div className="panel-player bg-[#96E072] rounded-xl w-[90%] h-2" onClick={stopTrack}>
-                    <div className="panel-circle bg-[#E8FCCF] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
+                <div className="panel-player bg-[var(--color1)] rounded-xl w-[90%] h-2" onClick={stopTrack}>
+                    <div className="panel-circle bg-[var(--color3)] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
                 </div>    
                 <img src="/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
             </div>
@@ -120,7 +120,7 @@ function NowPlaying(props){
     else {
         return(
             <div className="group md:top-[-500px] relative">
-                <div className="navbar-now-playing flex items-center py-2 px-3 gap-3 cursor-pointer shadow-md font-semibold min-w-64 rounded-xl transition-all bg-[#3DA35D] text-[#134611] group-hover:text-[#E8FCCF]">
+                <div className="navbar-now-playing flex items-center py-2 px-3 gap-3 cursor-pointer shadow-md font-semibold min-w-64 rounded-xl transition-all bg-[var(--color3)] text-[var(--color5)] group-hover:text-[var(--color1)]">
                     <div className="now-playing-image transition-all">
                         <img src={albumImage} alt="" className=" w-12 rounded-md"/>
                     </div>
@@ -131,10 +131,10 @@ function NowPlaying(props){
                     </div>
                 </div>
 
-                <div className="now-playing-panel z-10 mt-[12px] flex justify-center items-center gap-3 py-1 px-5 w-64 bg-[#3DA35D] rounded-2xl transition-all duration-500 delay-300">
+                <div className="now-playing-panel z-10 mt-[12px] flex justify-center items-center gap-3 py-1 px-5 w-64 bg-[var(--color1)] rounded-2xl transition-all duration-500 delay-300">
                     <img src="/next-button.svg" className="w-5 h-5 rotate-180 " alt="" onClick={previousTrack} />
-                    <div className="panel-player bg-[#96E072] rounded-xl w-[90%] h-2 relative" onClick={stopTrack}>
-                        <div className="panel-circle bg-[#E8FCCF] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
+                    <div className="panel-player bg-[var(--color2)] rounded-xl w-[90%] h-2 relative" onClick={stopTrack}>
+                        <div className="panel-circle bg-[var(--color3)] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
                     </div>    
                     <img src="/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
                 </div>
