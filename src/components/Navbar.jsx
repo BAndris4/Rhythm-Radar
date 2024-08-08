@@ -29,14 +29,19 @@ function Navbar() {
                 headers: { 'Authorization': 'Bearer ' + token }
             })
             .then(response => {
+                console.log(response);
+                if(response.data.images.length == 0){
+                    setImgURL("/spotify.png")
+                }
                 setImgURL(response.data.images[1].url);
             })
             .catch(err => {
+                console.log(err);
                 if (err.response.data.error.status === 401){
                     navigate('/login');
                     window.localStorage.removeItem("token");
-                }
-            } )    ;
+                };
+            });
         }
     }, [token]);
 

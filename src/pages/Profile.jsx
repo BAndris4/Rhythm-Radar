@@ -9,7 +9,7 @@ function Profile(){
     const navigate = useNavigate();
     let token = window.localStorage.getItem("token");
 
-    const [imgURL, setImgURL] = useState(""); 
+    const [imgURL, setImgURL] = useState("/spotify.png"); 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [country, setCountry] = useState("");
@@ -33,13 +33,20 @@ function Profile(){
               headers: {'Authorization' : 'Bearer ' + token}
             })
             .then(response => {
-                setImgURL(() => response.data.images[1].url);
                 setUsername(() => response.data.display_name);
                 setEmail(() => response.data.email);
                 setCountry(() => response.data.country);
                 setFollowers(() => response.data.followers.total);
                 setLink(() => response.data.external_urls.spotify);
                 setProduct(() => response.data.product);
+                
+                if (response.data.images.length === 0){
+                    setImgURL(() => "/spotify.png");
+                }
+                else{
+                    setImgURL(() => response.data.images[1].url);
+                }
+                
             })
             
             axios("https://api.spotify.com/v1/me/playlists?limit=50&offset=0", {
