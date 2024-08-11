@@ -4,8 +4,8 @@ import React, {useState, useEffect} from "react";
 function Login(){
     const navigate = useNavigate();
     const CLIENT_ID = 'fd85cd07269d4216a69488294502475c';
-    //const REDIRECT_URI = "http://localhost:5173/";
-    const REDIRECT_URI = "https://rhythm-radar.netlify.app/";
+    const REDIRECT_URI = "http://localhost:5173/";
+    //const REDIRECT_URI = "https://rhythm-radar.netlify.app/";
     const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
     const RESPONSE_TYPE = "token";
     const SCOPE = "user-top-read user-read-currently-playing user-read-recently-played user-modify-playback-state user-read-private user-read-email ";

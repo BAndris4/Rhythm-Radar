@@ -9,7 +9,7 @@ function Profile(){
     const navigate = useNavigate();
     let token = window.localStorage.getItem("token");
 
-    const [imgURL, setImgURL] = useState("/spotify.png"); 
+    const [imgURL, setImgURL] = useState(""); 
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [country, setCountry] = useState("");
@@ -179,43 +179,43 @@ function Profile(){
                             <div className="flex flex-col w-full gap-10 h-full justify-center">
                                 <div className="flex w-full justify-evenly">
                                     <a href={publicPlaylistUrls[0]} style={{width}}> 
-                                        <img src={publicPlaylistImages[0]} key={0} className="aspect-square cover w-full rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                        <img src={publicPlaylistImages[0]} key={0} className="aspect-square cover w-full rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                     </a>
                                     <a href={publicPlaylistUrls[1]} style={{width}}> 
-                                        <img src={publicPlaylistImages[1]} key={1} className="aspect-square cover w-full rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                        <img src={publicPlaylistImages[1]} key={1} className="aspect-square cover w-full rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                     </a>
                                     {publicPlaylists >= 5 ? (
                                         <a href={publicPlaylistUrls[4]} style={{width}}> 
-                                            <img src={publicPlaylistImages[4]} key={4} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                            <img src={publicPlaylistImages[4]} key={4} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                         </a>
                                     ) : ""}
                                 </div>
                                 <div className="flex w-full justify-evenly">
                                     <a href={publicPlaylistUrls[2]} style={{width}}> 
-                                        <img src={publicPlaylistImages[2]} key={2} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                        <img src={publicPlaylistImages[2]} key={2} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                     </a>
                                     <a href={publicPlaylistUrls[3]} style={{width}}> 
-                                        <img src={publicPlaylistImages[3]} key={3} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                        <img src={publicPlaylistImages[3]} key={3} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                     </a>
                                     {publicPlaylists >= 6 ? (
                                         <a href={publicPlaylistUrls[5]} style={{width}}> 
-                                            <img src={publicPlaylistImages[5]} key={5} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                            <img src={publicPlaylistImages[5]} key={5} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                         </a>
                                     ) : ""}
                                 </div>
                                 {publicPlaylists >= 7 ? (
                                     <div className="flex w-full justify-evenly">
                                     <a href={publicPlaylistUrls[6]} style={{width}}> 
-                                        <img src={publicPlaylistImages[6]} key={6} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                        <img src={publicPlaylistImages[6]} key={6} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                     </a>
                                     {publicPlaylists >= 8 ? (
                                         <a href={publicPlaylistUrls[7]} style={{width}}> 
-                                            <img src={publicPlaylistImages[7]} key={7} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                            <img src={publicPlaylistImages[7]} key={7} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                         </a>
                                     ) : ""}
                                     {publicPlaylists >= 9 ? (
                                         <a href={publicPlaylistUrls[8]} style={{width}}> 
-                                            <img src={publicPlaylistImages[8]} key={8} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-[var(--color5)] hover:scale-110 duration-200" /> 
+                                            <img src={publicPlaylistImages[8]} key={8} className="aspect-square w-full cover rounded-2xl max-w-[150px] shadow-md shadow-black hover:scale-110 duration-200" /> 
                                         </a>
                                     ) : ""}
                                 </div>
