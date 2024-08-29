@@ -44,10 +44,10 @@ function Artists() {
     }, [fetchArtists]);
 
     return (
-        <div className="artist-page bg-[var(--color1)] min-h-dvh text-[var(--color5)]">
+        <div className="artist-page bg-[var(--color1)] min-h-dvh text-[var(--color5)] duration-700">
             <Navbar />
             <div className="artist-container flex flex-col items-center">
-                <div className="time-range-container flex justify-around mt-10 xl:w-1/3 w-1/2 min-w-[300px] mx-5 bg-[var(--color2)] py-2 px-3 rounded-2xl shadow-md gap-3">
+                <div className="time-range-container flex justify-around mt-10 xl:w-1/3 w-1/2 min-w-[300px] mx-5 bg-[var(--color2)] py-2 px-3 rounded-2xl shadow-md gap-3 duration-700" >
                     <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[var(--color3)] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("short_term")}>
                         last 4 weeks
                     </div>
@@ -55,10 +55,10 @@ function Artists() {
                         last 6 months
                     </div>
                     <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[var(--color3)] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("long_term")}>
-                        last 12 months
+                        All time
                     </div>
                 </div>
-                <div className="artists-list grid grid-cols-2 md:grid-cols-3 bg-[var(--color2)] lg:p-10 p-2 rounded-2xl my-5 lg:gap-x-[5%] gap-x-[2%] lg:gap-y-12 md:gap-y-6 sm:gap-y-2 shadow-xl shadow-[var(--color2)] md:w-2/3 w-[85%]">
+                <div className="artists-list grid grid-cols-2 md:grid-cols-3 bg-[var(--color2)] lg:p-10 p-2 rounded-2xl my-5 lg:gap-x-[5%] gap-x-[2%] lg:gap-y-12 md:gap-y-6 sm:gap-y-2 shadow-xl shadow-[var(--color2)] md:w-2/3 w-[85%] duration-700">
                     {artists.map((artist, index) => (
                         <a key={index} href={artistUrls[index]} >
                             <div className="artist-card flex flex-col gap-4 justify-center items-center hover:bg-[var(--color3)] hover:shadow-2xl hover:shadow-[var(--color3)] p-5 rounded-2xl duration-200 hover:scale-105">

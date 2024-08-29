@@ -79,17 +79,17 @@ function RecentlyPlayed() {
     };
 
     return (
-        <div className="recently-played-container bg-[var(--color1)] min-h-dvh">
+        <div className="recently-played-container bg-[var(--color1)] min-h-dvh duration-700">
             <Navbar />
-            <div className="flex justify-center">
-                <div className="recently-played-table my-10 text-md w-[90%] sm:w-4/5 shadow-2xl shadow-[var(--color2)] text-[var(--color5)]">
+            <div className="flex justify-center duration-700">
+                <div className="recently-played-table my-10 text-md w-[90%] sm:w-4/5 shadow-2xl shadow-[var(--color2)] text-[var(--color5)] duration-700">
                     <div className="table-header rounded-xl scale-[1.01] bg-[var(--color3)] h-10 flex justify-around shadow-md shadow-[var(--color3)] text-center">
                         <div className="w-[5%] flex justify-center items-center min-w-14 ">Album</div>
                         <div className="w-[40%] flex items-center px-2">Track</div>
                         <div className="w-[40%] flex items-center px-2">Artist</div>
                         <div className="w-[25%] flex items-center px-2">Played At</div>
                     </div>
-                    <div className="table-body pt-2 bg-[var(--color2)]">
+                    <div className="table-body pt-2 bg-[var(--color2)] duration-200">
                         {recentTracks.map((track, index) => (
                             <div className="table-body-row cursor-pointer flex bg-[var(--color2)] rounded-xl duration-200 hover:shadow-xl hover:scale-105 hover:bg-[var(--color3)]" onClick={() => playPreview(previews[index], index)} onMouseEnter={() => setHoveredIndex(index)} 
                             onMouseLeave={() => setHoveredIndex(-1)} >

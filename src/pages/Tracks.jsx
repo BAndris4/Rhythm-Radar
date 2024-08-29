@@ -67,10 +67,10 @@ function Artists() {
 
 
     return (
-        <div className="tracks-page bg-[var(--color1)] min-h-dvh">
+        <div className="tracks-page bg-[var(--color1)] min-h-dvh duration-700">
             <Navbar />
-            <div className="tracks-container flex flex-col text-[var(--color5)] items-center">
-                <div className="time-range-container flex justify-around mt-10 xl:w-1/3 w-1/2 min-w-[300px] mx-5 bg-[var(--color2)] py-2 px-3 rounded-2xl shadow-md gap-3">
+            <div className="tracks-container flex flex-col text-[var(--color5)] items-center duration-700">
+                <div className="time-range-container flex justify-around mt-10 xl:w-1/3 w-1/2 min-w-[300px] mx-5 bg-[var(--color2)] py-2 px-3 rounded-2xl shadow-md gap-3 duration-700">
                     <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[var(--color3)] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("short_term")}>
                         last 4 weeks
                     </div>
@@ -78,11 +78,11 @@ function Artists() {
                         last 6 months
                     </div>
                     <div className="time-range-item py-1 px-4 rounded-lg flex justify-center text-center items-center duration-200 cursor-pointer hover:bg-[var(--color3)] hover:scale-105 hover:shadow-lg" onClick={() => setTimeRange("long_term")}>
-                        last 12 months
+                        All time
                     </div>
                 </div>
             
-                <div className="tracks-body text-sm flex flex-col sm:w-4/5 w-[90%] items-center my-10 shadow-2xl shadow-[var(--color2)]">
+                <div className="tracks-body text-sm flex flex-col sm:w-4/5 w-[90%] items-center my-10 shadow-2xl shadow-[var(--color2)] duration-200">
                     
                     <div className="track-header w-full rounded-xl scale-[1.01] bg-[var(--color3)] h-10 flex justify-around shadow-md shadow-[var(--color3)] px-2">
                         <div className="track-number w-[3%] translate-x-2 min-w-4 flex items-center justify-center sm:opacity-100 opacity-0">No.</div>
@@ -91,7 +91,7 @@ function Artists() {
                         <div className="track-artists w-[42%] translate-x-1 flex items-center">Artists</div>
                     </div>
 
-                    <div className="track-body w-full pt-2 bg-[var(--color2)]">
+                    <div className="track-body w-full pt-2 bg-[var(--color2)] duration-200">
                         {tracks.map((track, id) => (
                             <div key={id} className="track-item py-1 cursor-pointer flex gap-1 px-2 bg-[var(--color2)] rounded-xl duration-200 hover:shadow-xl hover:scale-105 hover:bg-[var(--color3)] w-full" onClick={() => playPreview(previews[id], id)} onMouseEnter={() => setHoveredIndex(id)} 
                             onMouseLeave={() => setHoveredIndex(-1)} >

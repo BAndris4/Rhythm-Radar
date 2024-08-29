@@ -46,7 +46,7 @@ function Navbar() {
     }, [token]);
 
     return(
-        <div className="navbar-container h-[76px] flex lg:justify-between items-center bg-[var(--color2)]">
+        <div className="navbar-container h-[76px] flex lg:justify-between items-center bg-[var(--color2)] transition-all duration-700">
             
             <div className="closed-navbar z-10 w-1/5 ml-5 lg:w-0">
                 <img src="/more.svg" alt="" className={`left-0 lg:left-[-100px] lg:absolute relative w-8 ml-5 hover:scale-110 transition-all ${isOpen ? 'open' : 'closed'} cursor-pointer duration-200`} onClick={handleToggle} />
@@ -60,10 +60,13 @@ function Navbar() {
                     <div className="navbar-recently-played mb-3 font-semibold px-5 py-2 rounded-t-md rounded-b-2xl transition-all text-[var(--color5)] hover:bg-[var(--color3)] hover:shadow-md hover:shadow-[var(--color3)] hover:scale-[1.01] cursor-pointer hover:text-[var(--color1)] duration-300" onClick={() => {navigate("/recently-played"); setIsOpen(false);}}>
                         Recently Played
                     </div>
+                    
                     <NowPlaying placement="1"></NowPlaying>
                 </div>
             </div>
             
+            
+
             <div className="navbar-tabs flex 2xl:w-3/5 lg:w-2/5 justify-start lg:gap-7 xl:gap-12 lg:ml-10 font-semibold absolute lg:relative translate-y-[-200px] lg:translate-y-0">
                 <div className="navbar-tracks lg:px-5 lg:py-2 rounded-md transition-all text-[var(--color5)] hover:bg-[var(--color3)] hover:shadow-md hover:shadow-[var(--color3)] hover:scale-105 cursor-pointer hover:text-[var(--color1)] duration-300" onClick={() => {navigate("/tracks")}}>
                     Tracks
@@ -78,6 +81,7 @@ function Navbar() {
             
             <div className="navbar-right lg:w-[50%] flex lg:justify-between md:justify-end mr-5 ml-auto items-center">
                 <NowPlaying placement="0"/>
+                
                 <div className="navbar-profile min-w-16">
                     <Menu as="div" className="md:ml-3" >
                         <div className="flex items-center">

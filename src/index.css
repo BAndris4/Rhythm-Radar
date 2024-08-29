@@ -17,10 +17,11 @@
 :root{
     --color1: #3E3939;
     --color2: #2C2727;
-    --color3: #3DA35D;;
+    --color3: #3DA35D;
     --color4: #3E3939;
     --color5: #F6F4F4;
 }
+
 .login-body, .table-header, .table-body-row:hover, .time-range-item:hover, .track-header, .track-item:hover, .track-number, .artist-card:hover{
     font-family: GothamBold;
 }
@@ -28,8 +29,6 @@
 .navbar-container, .table-body, .time-range-container, .track-body, .artist-card{
     font-family: GothamBook;
 }
-
-
 
 .cover{
     object-fit: cover;

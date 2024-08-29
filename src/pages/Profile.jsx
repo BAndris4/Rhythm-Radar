@@ -4,6 +4,29 @@ import axios from 'axios'
 import Navbar from "../components/Navbar";
 import Countries from "../components/countries.js"
 
+function handleThemeChange(){
+    const currentColor1 = getComputedStyle(document.documentElement).getPropertyValue('--color1').trim();
+    const themeIcons = document.querySelectorAll('.theme-changer img');
+
+    if (currentColor1 === '#3E3939') {
+        // Switch to light theme
+        document.documentElement.style.setProperty('--color1', '#E8FCCF');
+        document.documentElement.style.setProperty('--color2', '#96E072');
+        document.documentElement.style.setProperty('--color3', '#3DA35D');
+        document.documentElement.style.setProperty('--color4', '#3E8914');
+        document.documentElement.style.setProperty('--color5', '#134611');
+        themeIcons.forEach(icon => icon.src = '/sun.svg');
+    } else {
+        // Switch back to dark theme
+        document.documentElement.style.setProperty('--color1', '#3E3939');
+        document.documentElement.style.setProperty('--color2', '#2C2727');
+        document.documentElement.style.setProperty('--color3', '#3DA35D');
+        document.documentElement.style.setProperty('--color4', '#3E3939');
+        document.documentElement.style.setProperty('--color5', '#F6F4F4');
+        themeIcons.forEach(icon => icon.src = '/moon.svg');
+    }
+}
+
 function Profile(){
 
     const navigate = useNavigate();
@@ -68,14 +91,17 @@ function Profile(){
 
 
     return(
-        <div className="profile-page bg-[var(--color1)] min-h-svh">
+        <div className="profile-page bg-[var(--color1)] min-h-svh duration-700">
             <Navbar></Navbar>
-            <div className="xl:h-[75svh] xl:flex xl:justify-center xl:items-center">
+            <div className="xl:h-[75svh] xl:flex xl:justify-center xl:items-center duration-700">
                 <div className="flex-1 profile-container flex xl:flex-row flex-col justify-center xl:gap-12 gap-6">
                     
                     {/*XL-nél kisebb welcome card*/}
                     <div className="profile-welcome-card flex z-0 items-center xl:translate-x-[-6000px] xl:absolute justify-center flex-col gap-3 mt-7 bg-[var(--color2)] hover:bg-[var(--color3)] xl:w-2/5 w-[90%] translate-x-[5%] py-10 shadow-2xl shadow-[var(--color2)] hover:shadow-[var(--color3)] rounded-2xl hover:scale-105 transition-transform duration-300">
-                        <a href={link}><img className="profile-pic h-56 w-56 rounded-full cover shadow-md shadow-black hover:scale-110 duration-200" src={imgURL}></img></a>
+                        <div className="theme-changer bg-[--color1] p-3 rounded-3xl hover:scale-110 transition-all duration-300 cursor-pointer select-none" onClick={handleThemeChange}>
+                            <img src="/moon.svg" width="16" height="16" alt="" />
+                        </div>
+                        <a href={link}><img className="profile-pic h-56 w-56 rounded-full cover shadow-md shadow-black hover:scale-105 duration-300" src={imgURL}></img></a>
                         <h2 className="text-3xl font-semibold text-[var(--color5)] hover:text-[var(--color1)] transition-all cursor-pointer duration-200">Welcome {username}!</h2>
                     </div>
 
@@ -160,8 +186,11 @@ function Profile(){
                     </div>
 
                     {/*XL-nél nagyobb welcome card*/}
-                    <div className="profile-welcome-card-xl flex items-center translate-x-[-1500px] absolute xl:relative xl:translate-x-0 justify-center flex-col gap-3 mt-16 bg-[var(--color2)] hover:bg-[var(--color3)] xl:w-2/5 w-full py-10 shadow-2xl shadow-[var(--color2)] hover:shadow-[var(--color3)] rounded-2xl hover:scale-110 transition-all duration-300">
-                        <a href={link}><img className="profile-pic h-56 w-56 rounded-full cover shadow-md shadow-black hover:scale-110 duration-200" src={imgURL}></img></a>
+                    <div className="profile-welcome-card-xl flex items-center translate-x-[-1500px] absolute xl:relative xl:translate-x-0 justify-center flex-col gap-3 mt-16 bg-[var(--color2)] hover:bg-[var(--color3)] xl:w-2/5 w-full py-5 shadow-2xl shadow-[var(--color2)] hover:shadow-[var(--color3)] rounded-2xl hover:scale-110 transition-all duration-300">
+                        <div className="theme-changer bg-[--color1] p-3 rounded-3xl hover:scale-110 transition-all duration-300 cursor-pointer select-none" onClick={handleThemeChange}>
+                            <img src="/moon.svg" width="16" height="16" alt="" />
+                        </div>
+                        <a href={link}><img className="profile-pic h-56 w-56 rounded-full cover shadow-md shadow-black hover:scale-105 duration-300" src={imgURL}></img></a>
                         <h2 className="text-3xl font-semibold text-[var(--color5)] hover:text-[var(--color1)] transition-all cursor-pointer duration-200">Welcome {username}!</h2>
                     </div>
                     
