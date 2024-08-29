@@ -113,7 +113,6 @@ function NowPlaying(props){
                     <div className="panel-circle bg-[var(--color3)] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
                 </div>    
                 <img src="/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
-                <img src="/microphone.svg" className="w-5 h-5" alt="" />
             </div>
         </div>  
         );
@@ -138,7 +137,6 @@ function NowPlaying(props){
                         <div className="panel-circle bg-[var(--color3)] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
                     </div>    
                     <img src="/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
-                    <img src="/microphone.svg" className="w-5 h-5" alt="" />
                 </div>
             </div>  
         );
