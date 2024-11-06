@@ -6,8 +6,6 @@ import Artists from './pages/Artists.jsx'
 import RecentlyPlayed from './pages/RecentlyPlayed.jsx'
 
 function App() {
-
-  
   return (
     <div>
         <BrowserRouter>

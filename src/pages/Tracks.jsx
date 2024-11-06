@@ -42,7 +42,7 @@ function Artists() {
                 setTracks(tracks_array);
                 setArtists(artists_array);
                 setAlbumImages(albumImages_array);
-                setPreviews(previews_array);            
+                setPreviews(previews_array);
             });
         }
     }, [timeRange, token]);
@@ -56,7 +56,6 @@ function Artists() {
             if (currentTrackIndex === index) {
                 audioRef.current.pause();
                 setCurrentTrackIndex(null);
-                
             } else {
                 audioRef.current.src = previewUrl;
                 audioRef.current.play();
@@ -81,9 +80,8 @@ function Artists() {
                         All time
                     </div>
                 </div>
-            
+
                 <div className="tracks-body text-sm flex flex-col sm:w-4/5 w-[90%] items-center my-10 shadow-2xl shadow-[var(--color2)] duration-200">
-                    
                     <div className="track-header w-full rounded-xl scale-[1.01] bg-[var(--color3)] h-10 flex justify-around shadow-md shadow-[var(--color3)] px-2">
                         <div className="track-number w-[3%] translate-x-2 min-w-4 flex items-center justify-center sm:opacity-100 opacity-0">No.</div>
                         <div className="track-album-image w-[5%] translate-x-2 sm:min-w-16 min-w-11 flex items-center justify-center sm:opacity-100 opacity-0">Album</div>

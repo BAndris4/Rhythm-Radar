@@ -2,9 +2,8 @@ import React, {useEffect, useState, useRef} from "react";
 import axios from "axios";
 
 function NowPlaying(props){
-    
     let token = window.localStorage.getItem("token");
-    const intervalRef = useRef(null); 
+    const intervalRef = useRef(null);
     const [currentArtists, setCurrentArtists] = useState(["No Artist"]);
     const [currentTrack, setCurrentTrack] = useState("No Track");
     const [progress, setProgress] = useState(0);
@@ -100,7 +99,7 @@ function NowPlaying(props){
                 <div className="now-playing-image transition-all">
                     <img src={albumImage} alt="" className=" w-12 rounded-md"/>
                 </div>
-                    
+
                 <div className="now-playing-text transition-all">
                     <div className="now-playing-track text-lg">{currentTrack}</div>
                     <div className="now-playing-artists text-sm">{currentArtists.length<=3 ? currentArtists.join(", ") : `${currentArtists[0]}, ${currentArtists[1]}, ${currentArtists[2]}, ...`}</div>
@@ -111,10 +110,10 @@ function NowPlaying(props){
                 <img src="/next-button.svg" className="w-5 h-5 rotate-180 " alt="" onClick={previousTrack} />
                 <div className="panel-player bg-[var(--color1)] rounded-xl w-[90%] h-2" onClick={stopTrack}>
                     <div className="panel-circle bg-[var(--color3)] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
-                </div>    
+                </div>
                 <img src="/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
             </div>
-        </div>  
+        </div>
         );
     }
     else {
@@ -124,7 +123,7 @@ function NowPlaying(props){
                     <div className="now-playing-image transition-all">
                         <img src={albumImage} alt="" className=" w-12 rounded-md"/>
                     </div>
-                        
+
                     <div className="now-playing-text transition-all">
                         <div className="now-playing-track text-lg">{currentTrack}</div>
                         <div className="now-playing-artists text-sm">{currentArtists.length<=3 ? currentArtists.join(", ") : `${currentArtists[0]}, ${currentArtists[1]}, ${currentArtists[2]}, ...`}</div>
@@ -135,14 +134,12 @@ function NowPlaying(props){
                     <img src="/next-button.svg" className="w-5 h-5 rotate-180 " alt="" onClick={previousTrack} />
                     <div className="panel-player bg-[var(--color2)] rounded-xl w-[90%] h-2 relative" onClick={stopTrack}>
                         <div className="panel-circle bg-[var(--color3)] h-2 rounded-xl transition-all duration-700" style={{ width: `${progress}%` }}></div>
-                    </div>    
+                    </div>
                     <img src="/next-button.svg" className="w-5 h-5" alt="" onClick={nextTrack} />
                 </div>
-            </div>  
+            </div>
         );
     }
-    
-
 }
 
 export default NowPlaying;
