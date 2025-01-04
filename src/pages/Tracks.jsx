@@ -34,6 +34,7 @@ function Artists() {
                 let albumImages_array = [];
                 let previews_array = [];
                 response.data.items.map((item) => {
+                    console.log(item);
                     tracks_array.push(item.name);
                     artists_array.push(item.artists.map(artist => artist.name).join(", "));
                     albumImages_array.push(item.album.images[0].url);
@@ -51,6 +52,7 @@ function Artists() {
         fetchTracks();
     }, [fetchTracks]);
 
+    // Deprecated
     const playPreview = (previewUrl, index) => {
         if (audioRef.current) {
             if (currentTrackIndex === index) {
@@ -63,7 +65,6 @@ function Artists() {
             }
         }
     };
-
 
     return (
         <div className="tracks-page bg-[var(--color1)] min-h-dvh duration-700">
@@ -95,9 +96,11 @@ function Artists() {
                             onMouseLeave={() => setHoveredIndex(-1)} >
                                 <div className="track-number w-[3%] min-w-4 flex items-center justify-center">{id+1}.</div>
                                 <div className="track-album-image w-[5%] sm:min-w-16 min-w-11 flex items-center justify-center">
-                                    <img src={albumImages[id]} className={`sm:w-12 w-9 rounded-xl shadow-sm shadow-[var(--color2)] ${currentTrackIndex === id ? "blur-[1px]" : ""} duration-200`} alt=""/>
-                                    <img src="/play-button.svg" alt="" className={`absolute ${hoveredIndex === id && currentTrackIndex !== id ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
-                                    <img src="/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === id ? "opacity-100" : ""} w-5 absolute duration-200`} />
+                                    <img src={albumImages[id]} className={`sm:w-12 w-9 rounded-xl shadow-sm shadow-[var(--color2)]`} alt=""/>
+                                    <div className="deprecated hidden">
+                                        <img src="/play-button.svg" alt="" className={`absolute ${hoveredIndex === id && currentTrackIndex !== id ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
+                                        <img src="/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === id ? "opacity-100" : ""} w-5 absolute duration-200`} />
+                                    </div>
                                 </div>
                                 <div className="track-name w-[50%] flex items-center" >{track}</div>
                                 <div className="track-artists w-[42%] flex items-center">{artists[id]}</div>

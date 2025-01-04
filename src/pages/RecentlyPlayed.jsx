@@ -64,12 +64,13 @@ function RecentlyPlayed() {
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
 
+    // Deprecated
     const playPreview = (previewUrl, index) => {
         if (audioRef.current) {
             if (currentTrackIndex === index) {
                 audioRef.current.pause();
                 setCurrentTrackIndex(null);
-                
+
             } else {
                 audioRef.current.src = previewUrl;
                 audioRef.current.play();
@@ -94,9 +95,11 @@ function RecentlyPlayed() {
                             <div className="table-body-row cursor-pointer flex bg-[var(--color2)] rounded-xl duration-200 hover:shadow-xl hover:scale-105 hover:bg-[var(--color3)]" onClick={() => playPreview(previews[index], index)} onMouseEnter={() => setHoveredIndex(index)} 
                             onMouseLeave={() => setHoveredIndex(-1)} >
                                 <div className="w-[5%] flex items-center justify-center min-w-14 py-1">
-                                    <img src={albumImages[index]} className={`w-12 rounded-xl shadow-sm shadow-[var(--color2)] ${currentTrackIndex === index ? "blur-[1px]" : ""} duration-200`} alt=""/>
-                                    <img src="/play-button.svg" alt="" className={`absolute ${hoveredIndex === index && currentTrackIndex !== index ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
-                                    <img src="/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === index ? "opacity-100" : ""} w-5 absolute duration-200`} />
+                                    <img src={albumImages[index]} className={`w-12 rounded-xl shadow-sm shadow-[var(--color2)]`} alt=""/>
+                                    <div className="deprecated hidden">
+                                        <img src="/play-button.svg" alt="" className={`absolute ${hoveredIndex === index && currentTrackIndex !== index ? "opacity-100 z-10" : "opacity-0 z-0"} drop-shadow-[0_0px_3px_rgba(0,0,0,1)] w-5 duration-200`}/>
+                                        <img src="/pause-button.svg" alt="" className={`opacity-0 z-0 drop-shadow-[0_0px_3px_rgba(0,0,0,1)] ${currentTrackIndex === index ? "opacity-100" : ""} w-5 absolute duration-200`} />
+                                    </div>
                                 </div>
                                 <div className="w-[40%] flex items-center px-2">{track}</div>
                                 <div className="w-[40%] flex items-center px-2">{recentArtists[index]}</div>
@@ -109,8 +112,6 @@ function RecentlyPlayed() {
                 </div>
             </div>
             <audio ref={audioRef} className="absolute" style={{ display: 'none' }} controls />
-
-            
         </div>
     );
 }
